@@ -28,10 +28,13 @@ export default function Home() {
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
             <span className="text-white/90 text-sm">AI-Powered Solutions for Small Businesses</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Transform Your Business<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-accent-300">With AI Power</span>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
+            Next-Gen AI.<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-accent-300">Seamless Flow.</span>
           </h1>
+          <p className="text-lg text-primary-200 max-w-2xl mx-auto mb-4 italic">
+            "NexaFlow helps small businesses flow into the future with AI-powered automation."
+          </p>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
             Automate tasks, build stunning websites, and get your own AI assistant. 
             Save 5-10 hours every week with tools built for small businesses.
@@ -140,7 +143,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Why NexaFlow AI?</h2>
-            <p className="text-xl text-slate-600">Built specifically for small businesses like yours</p>
+            <p className="text-lg text-primary-600 max-w-2xl mx-auto mb-2 italic font-medium">
+              "NexaFlow helps small businesses flow into the future with AI-powered automation."
+            </p>
+            <p className="text-slate-600 max-w-3xl mx-auto">
+              The name NexaFlow combines <strong>NEXA</strong> (next + nexus) — representing the next generation 
+              and the connection point between businesses and AI — with <strong>FLOW</strong> — representing 
+              smooth processes, automation, and seamless workflows.
+            </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-12">
@@ -269,7 +279,7 @@ export default function Home() {
               </div>
               <span className="text-2xl font-bold text-white">NexaFlow AI</span>
             </div>
-            <p className="text-slate-400 text-sm">© 2026 NexaFlow AI Services. All rights reserved.</p>
+            <p className="text-slate-400 text-sm text-center">Next-Gen AI. Seamless Flow. | © 2026 NexaFlow AI Services. All rights reserved.</p>
           </div>
         </div>
       </footer>
