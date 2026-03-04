@@ -3,6 +3,9 @@
 import { Zap, Globe, Brain, BarChart3, MessageSquare, Calendar, CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 
+// Formspree form ID - replace with your own from https://formspree.io
+const FORMSPREE_FORM_ID = 'xyzwabcd' // TODO: Replace with your Formspree form ID
+
 export default function Home() {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,16 +22,17 @@ export default function Home() {
     setErrorMessage('')
 
     try {
-      const response = await fetch('https://api.nexaflow360.com/api/v1/leads/public', {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone || null,
-          service: formData.service || 'bundle'
+          phone: formData.phone || 'Not provided',
+          service: formData.service || 'Bundle Package'
         }),
       })
 
