@@ -371,8 +371,8 @@ export default function Home() {
             <a href="tel:+13239171129" className="flex items-center gap-2 hover:text-white transition">
               <Phone className="w-5 h-5" /> (323) 917-1129
             </a>
-            <a href="mailto:hello@nexaflow.ai" className="flex items-center gap-2 hover:text-white transition">
-              <Mail className="w-5 h-5" /> hello@nexaflow.ai
+            <a href="mailto:info@nexaflow360.com" className="flex items-center gap-2 hover:text-white transition">
+              <Mail className="w-5 h-5" /> info@nexaflow360.com
             </a>
           </div>
         </div>
