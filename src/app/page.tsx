@@ -1,6 +1,49 @@
+'use client'
+
 import { Zap, Globe, Brain, BarChart3, MessageSquare, Calendar, CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react'
+import { useState } from 'react'
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: ''
+  })
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('loading')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('https://api.nexaflow360.com/api/v1/leads/public', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || null,
+          service: formData.service || 'bundle'
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form')
+      }
+
+      setStatus('success')
+      setFormData({ name: '', email: '', phone: '', service: '' })
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage('Something went wrong. Please try again or email us directly.')
+    }
+  }
+
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Navigation */}
@@ -252,22 +295,63 @@ export default function Home() {
           <p className="text-xl text-slate-300 mb-10">Schedule a free 15-minute consultation and see how AI can save you hours every week.</p>
           
           <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-xl mx-auto">
-            <form className="space-y-4">
-              <input type="text" placeholder="Your Name" className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50" />
-              <input type="email" placeholder="Email Address" className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50" />
-              <input type="tel" placeholder="Phone Number" className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50" />
-              <select className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/50">
-                <option value="" className="text-slate-800">Select Service</option>
-                <option value="openclaw" className="text-slate-800">OpenClaw AI Assistant</option>
-                <option value="website" className="text-slate-800">Website Development</option>
-                <option value="excel" className="text-slate-800">Excel Automation</option>
-                <option value="data" className="text-slate-800">Data Analysis</option>
-                <option value="bundle" className="text-slate-800">Bundle Package</option>
-              </select>
-              <button type="submit" className="w-full bg-white text-primary-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition">
-                Get Free Consultation
-              </button>
-            </form>
+            {status === 'success' ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+                <p className="text-white/80">We&apos;ve received your request and will contact you within 24 hours.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input 
+                  type="text" 
+                  placeholder="Your Name" 
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50" 
+                />
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50" 
+                />
+                <input 
+                  type="tel" 
+                  placeholder="Phone Number (optional)"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50" 
+                />
+                <select 
+                  value={formData.service}
+                  onChange={(e) => setFormData({...formData, service: e.target.value})}
+                  className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/50"
+                >
+                  <option value="" className="text-slate-800">Select Service</option>
+                  <option value="openclaw" className="text-slate-800">OpenClaw AI Assistant</option>
+                  <option value="website" className="text-slate-800">Website Development</option>
+                  <option value="excel" className="text-slate-800">Excel Automation</option>
+                  <option value="data" className="text-slate-800">Data Analysis</option>
+                  <option value="bundle" className="text-slate-800">Bundle Package</option>
+                </select>
+                {status === 'error' && (
+                  <p className="text-red-300 text-sm">{errorMessage}</p>
+                )}
+                <button 
+                  type="submit" 
+                  disabled={status === 'loading'}
+                  className="w-full bg-white text-primary-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {status === 'loading' ? 'Submitting...' : 'Get Free Consultation'}
+                </button>
+              </form>
+            )}
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 text-white/80">
