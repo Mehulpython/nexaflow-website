@@ -230,6 +230,18 @@ export default function Home() {
               <a href="https://buy.stripe.com/fZu9AN6sNbmQ9uj0YueME02" target="_blank" rel="noopener noreferrer" className="block text-center bg-slate-100 text-slate-800 px-6 py-3 rounded-full font-semibold hover:bg-slate-200 transition">Buy Now - $3,200+</a>
             </div>
           </div>
+
+          {/* Monthly Maintenance Add-on */}
+          <div className="mt-12 text-center">
+            <div className="inline-block bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200 max-w-md">
+              <h3 className="text-xl font-bold text-slate-800 mb-2"> Monthly Maintenance</h3>
+              <p className="text-slate-600 mb-4">Ongoing support, updates & maintenance</p>
+              <div className="text-3xl font-bold text-green-600 mb-4">$50<span className="text-lg text-slate-500">/month</span></div>
+              <a href="https://buy.stripe.com/9B69AN9EZ62w8qf8qWeME03" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition">
+                Subscribe Now
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
