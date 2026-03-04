@@ -11,7 +11,8 @@ export default function Home() {
     name: '',
     email: '',
     phone: '',
-    service: ''
+    service: '',
+    comment: ''
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -32,7 +33,8 @@ export default function Home() {
           name: formData.name,
           email: formData.email,
           phone: formData.phone || 'Not provided',
-          service: formData.service || 'Bundle Package'
+          service: formData.service || 'Bundle Package',
+          comment: formData.comment || 'No additional comments'
         }),
       })
 
@@ -41,7 +43,7 @@ export default function Home() {
       }
 
       setStatus('success')
-      setFormData({ name: '', email: '', phone: '', service: '' })
+      setFormData({ name: '', email: '', phone: '', service: '', comment: '' })
     } catch (error) {
       setStatus('error')
       setErrorMessage('Something went wrong. Please try again or email us directly.')
@@ -344,6 +346,13 @@ export default function Home() {
                   <option value="data" className="text-slate-800">Data Analysis</option>
                   <option value="bundle" className="text-slate-800">Bundle Package</option>
                 </select>
+                <textarea 
+                  placeholder="Describe your problem or add any comments..."
+                  rows={4}
+                  value={formData.comment}
+                  onChange={(e) => setFormData({...formData, comment: e.target.value})}
+                  className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50 resize-none"
+                />
                 {status === 'error' && (
                   <p className="text-red-300 text-sm">{errorMessage}</p>
                 )}
