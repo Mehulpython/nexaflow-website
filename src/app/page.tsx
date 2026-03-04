@@ -368,8 +368,8 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 text-white/80">
-            <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-white transition">
-              <Phone className="w-5 h-5" /> [Your Phone]
+            <a href="tel:+13239171129" className="flex items-center gap-2 hover:text-white transition">
+              <Phone className="w-5 h-5" /> (323) 917-1129
             </a>
             <a href="mailto:hello@nexaflow.ai" className="flex items-center gap-2 hover:text-white transition">
               <Mail className="w-5 h-5" /> hello@nexaflow.ai
