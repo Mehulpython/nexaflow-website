@@ -198,7 +198,7 @@ export default function Home() {
                 <li className="flex items-center gap-2 text-slate-600"><CheckCircle className="w-5 h-5 text-green-500" /> OpenClaw Basic Setup</li>
                 <li className="flex items-center gap-2 text-slate-600"><CheckCircle className="w-5 h-5 text-green-500" /> 1 Month Support</li>
               </ul>
-              <a href="#contact" className="block text-center bg-slate-100 text-slate-800 px-6 py-3 rounded-full font-semibold hover:bg-slate-200 transition">Get Started</a>
+              <a href="https://buy.stripe.com/fZudR3aJ34Ys8qfbD8eME00" target="_blank" rel="noopener noreferrer" className="block text-center bg-slate-100 text-slate-800 px-6 py-3 rounded-full font-semibold hover:bg-slate-200 transition">Buy Now - $850</a>
             </div>
 
             {/* Growth - Featured */}
@@ -213,7 +213,7 @@ export default function Home() {
                 <li className="flex items-center gap-2 text-white/90"><CheckCircle className="w-5 h-5 text-green-400" /> Excel Automation</li>
                 <li className="flex items-center gap-2 text-white/90"><CheckCircle className="w-5 h-5 text-green-400" /> 3 Months Support</li>
               </ul>
-              <a href="#contact" className="block text-center bg-white text-primary-700 px-6 py-3 rounded-full font-semibold hover:bg-slate-100 transition">Get Started</a>
+              <a href="https://buy.stripe.com/8x29ANeZj0Ic8qf0YueME01" target="_blank" rel="noopener noreferrer" className="block text-center bg-white text-primary-700 px-6 py-3 rounded-full font-semibold hover:bg-slate-100 transition">Buy Now - $2,300</a>
             </div>
 
             {/* Enterprise */}
@@ -227,7 +227,7 @@ export default function Home() {
                 <li className="flex items-center gap-2 text-slate-600"><CheckCircle className="w-5 h-5 text-green-500" /> Priority Support</li>
                 <li className="flex items-center gap-2 text-slate-600"><CheckCircle className="w-5 h-5 text-green-500" /> Ongoing Maintenance</li>
               </ul>
-              <a href="#contact" className="block text-center bg-slate-100 text-slate-800 px-6 py-3 rounded-full font-semibold hover:bg-slate-200 transition">Contact Us</a>
+              <a href="https://buy.stripe.com/fZu9AN6sNbmQ9uj0YueME02" target="_blank" rel="noopener noreferrer" className="block text-center bg-slate-100 text-slate-800 px-6 py-3 rounded-full font-semibold hover:bg-slate-200 transition">Buy Now - $3,200+</a>
             </div>
           </div>
         </div>
