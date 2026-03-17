@@ -1,7 +1,9 @@
 'use client'
 
-import { Zap, Globe, Brain, BarChart3, MessageSquare, Calendar, CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react'
+import { Zap, Globe, Brain, BarChart3, MessageSquare, Calendar, CheckCircle, Phone, Mail, ArrowRight, ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import Link from 'next/link'
+import { industryCategories, industries } from '@/data/industries'
 
 // Formspree form ID - replace with your own from https://formspree.io
 const FORMSPREE_FORM_ID = 'mykdrobb' // NexaFlow Leads form
@@ -16,6 +18,8 @@ export default function Home() {
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [showIndustriesMenu, setShowIndustriesMenu] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -55,19 +59,99 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          {/* Left: Logo */}
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center">
               <Zap className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold gradient-text">NexaFlow AI</span>
           </div>
-          <div className="hidden md:flex items-center gap-8">
+          
+          {/* Right: Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            {/* Industries Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setShowIndustriesMenu(true)}
+              onMouseLeave={() => setShowIndustriesMenu(false)}
+            >
+              <Link 
+                href="/industries" 
+                className="flex items-center gap-1 text-slate-600 hover:text-primary-600 transition py-2"
+              >
+                Industries <ChevronDown className="w-4 h-4" />
+              </Link>
+              
+              {/* Dropdown Menu */}
+              {showIndustriesMenu && (
+                <div className="absolute top-full left-0 w-80 bg-white rounded-xl shadow-xl border border-slate-200 py-2 mt-1">
+                  <div className="max-h-96 overflow-y-auto">
+                    {industryCategories.map(category => (
+                      <div key={category} className="px-3 py-2">
+                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-2 mb-1">{category}</p>
+                        {industries
+                          .filter(i => i.category === category)
+                          .slice(0, 4)
+                          .map(industry => (
+                            <Link
+                              key={industry.id}
+                              href={`/industries/${industry.id}`}
+                              className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-50 text-slate-600 hover:text-primary-600 transition text-sm"
+                            >
+                              <span>{industry.icon}</span>
+                              <span>{industry.name}</span>
+                            </Link>
+                          ))}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="border-t border-slate-100 mt-2 pt-2 px-3">
+                    <Link 
+                      href="/industries" 
+                      className="block text-center text-primary-600 font-medium text-sm hover:underline py-2"
+                    >
+                      View All {industries.length} Industries →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+            
             <a href="#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
             <a href="#features" className="text-slate-600 hover:text-primary-600 transition">Features</a>
             <a href="#pricing" className="text-slate-600 hover:text-primary-600 transition">Pricing</a>
             <a href="#contact" className="bg-primary-600 text-white px-6 py-2.5 rounded-full hover:bg-primary-700 transition font-medium">Get Started</a>
           </div>
+          
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden p-2 text-slate-600"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-slate-100 py-4 px-6">
+            <Link href="/industries" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+              Industries
+            </Link>
+            <a href="#services" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+              Services
+            </a>
+            <a href="#features" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+              Features
+            </a>
+            <a href="#pricing" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+              Pricing
+            </a>
+            <a href="#contact" className="block py-2 mt-2 bg-primary-600 text-white text-center rounded-full py-2.5" onClick={() => setMobileMenuOpen(false)}>
+              Get Started
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
