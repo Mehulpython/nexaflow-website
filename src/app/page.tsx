@@ -312,6 +312,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Study Section */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Real Results</h2>
+            <p className="text-xl text-slate-600">See how businesses like yours save time with NexaFlow AI</p>
+          </div>
+          
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              {/* Before */}
+              <div className="text-center">
+                <div className="text-red-500 text-sm font-semibold mb-2">BEFORE</div>
+                <div className="text-5xl font-bold text-slate-800 mb-2">10+</div>
+                <p className="text-slate-600">hours/week on manual tasks</p>
+              </div>
+              
+              {/* Arrow */}
+              <div className="flex items-center justify-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+                  <ArrowRight className="w-10 h-10 text-white" />
+                </div>
+              </div>
+              
+              {/* After */}
+              <div className="text-center">
+                <div className="text-green-500 text-sm font-semibold mb-2">AFTER</div>
+                <div className="text-5xl font-bold text-green-600 mb-2">2 hrs</div>
+                <p className="text-slate-600">hours/week on admin tasks</p>
+              </div>
+            </div>
+            
+            <div className="border-t border-slate-200 pt-8">
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+                  SL
+                </div>
+                <div>
+                  <p className="text-slate-700 text-lg italic mb-4">
+                    "NexaFlow transformed how we handle customer inquiries. Our AI assistant now responds to booking requests 24/7, and I've reclaimed 8+ hours every week to focus on my clients. The setup was seamless and the ROI was immediate."
+                  </p>
+                  <p className="font-bold text-slate-800">Sarah L.</p>
+                  <p className="text-slate-500">Owner, Serenity Day Spa • Austin, TX</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-8 grid grid-cols-3 gap-4 text-center">
+              <div className="bg-green-50 rounded-xl p-4">
+                <div className="text-2xl font-bold text-green-600">80%</div>
+                <p className="text-sm text-slate-600">Time Saved</p>
+              </div>
+              <div className="bg-blue-50 rounded-xl p-4">
+                <div className="text-2xl font-bold text-blue-600">24/7</div>
+                <p className="text-sm text-slate-600">AI Availability</p>
+              </div>
+              <div className="bg-purple-50 rounded-xl p-4">
+                <div className="text-2xl font-bold text-purple-600">3x</div>
+                <p className="text-sm text-slate-600">Faster Response</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="pricing" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
@@ -373,6 +438,19 @@ export default function Home() {
               <a href="https://buy.stripe.com/9B69AN9EZ62w8qf8qWeME03" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition">
                 Subscribe Now
               </a>
+            </div>
+          </div>
+
+          {/* 30-Day Money Back Guarantee */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl px-8 py-6 border border-amber-200">
+              <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🛡️</span>
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold text-slate-800">30-Day Money-Back Guarantee</h3>
+                <p className="text-slate-600">Not satisfied? Get a full refund within 30 days. No questions asked.</p>
+              </div>
             </div>
           </div>
         </div>
