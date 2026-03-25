@@ -58,10 +58,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <SchemaMarkup />
-        {/* Google Analytics 4 - Replace G-XXXXXXXXXX with your Measurement ID */}
+        {/* Google Analytics 4 */}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-R6GMZ8J72M`}
         />
         <script
           dangerouslySetInnerHTML={{
@@ -69,7 +69,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX');
+              gtag('config', 'G-R6GMZ8J72M');
             `,
           }}
         />
