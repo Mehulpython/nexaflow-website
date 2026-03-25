@@ -1,0 +1,43 @@
+{
+  "businessName": "NexaFlow AI",
+  "category": "Professional Services",
+  "subcategory": "Business Consulting",
+  "description": "AI-powered solutions for small businesses including AI assistant setup, website development, Excel automation, and data analysis.",
+  "phone": "+1-323-917-1129",
+  "email": "info@nexaflow360.com",
+  "website": "https://nexaflow360.com",
+  "address": {
+    "streetAddress": "",
+    "city": "Harrisburg",
+    "state": "PA",
+    "zipCode": "",
+    "country": "US"
+  },
+  "hours": {
+    "monday": "09:00-18:00",
+    "tuesday": "09:00-18:00",
+    "wednesday": "09:00-18:00",
+    "thursday": "09:00-18:00",
+    "friday": "09:00-18:00",
+    "saturday": "10:00-14:00",
+    "sunday": "Closed"
+  },
+  "services": [
+    "AI Assistant Setup",
+    "Website Development",
+    "Excel Automation",
+    "Data Analysis"
+  ],
+  "keywords": [
+    "AI for small business",
+    "AI automation",
+    "business automation",
+    "AI assistant setup",
+    "website development",
+    "Excel automation",
+    "data analysis services"
+  ],
+  "priceRange": "$300-$3200",
+  "areaServed": "United States",
+  "foundingDate": "2026"
+}

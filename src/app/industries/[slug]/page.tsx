@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Zap, ArrowLeft, CheckCircle, Phone, ArrowRight, MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 import { industries } from '@/data/industries'
@@ -7,6 +8,26 @@ export async function generateStaticParams() {
   return industries.map((industry) => ({
     slug: industry.id,
   }))
+}
+
+// Dynamic metadata per industry
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const industry = industries.find(i => i.id === params.slug)
+  if (!industry) return { title: 'Industry Not Found' }
+
+  return {
+    title: `${industry.name} AI Solutions | NexaFlow AI`,
+    description: industry.shortDescription,
+    alternates: {
+      canonical: `https://nexaflow360.com/industries/${industry.id}`,
+    },
+    openGraph: {
+      title: `${industry.name} AI Solutions | NexaFlow AI`,
+      description: industry.shortDescription,
+      url: `https://nexaflow360.com/industries/${industry.id}`,
+      type: 'website',
+    },
+  }
 }
 
 // Server component for the industry page
@@ -33,6 +54,39 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      {/* JSON-LD: Breadcrumb + Service Schema */}
+      {industry && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexaflow360.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://nexaflow360.com/industries" },
+                  { "@type": "ListItem", "position": 3, "name": industry.name, "item": `https://nexaflow360.com/industries/${industry.id}` }
+                ]
+              })
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": `AI Solutions for ${industry.name}`,
+                "description": industry.shortDescription,
+                "provider": { "@type": "Organization", "name": "NexaFlow AI", "url": "https://nexaflow360.com" },
+                "offers": { "@type": "Offer", "price": String(industry.startingPrice), "priceCurrency": "USD" },
+                "areaServed": { "@type": "Country", "name": "United States" }
+              })
+            }}
+          />
+        </>
+      )}
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
