@@ -119,8 +119,8 @@ export default function Home() {
             
             <a href="#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
             <a href="#features" className="text-slate-600 hover:text-primary-600 transition">Features</a>
+            <Link href="/plans" className="text-slate-600 hover:text-primary-600 transition">Plans</Link>
             <Link href="/blog" className="text-slate-600 hover:text-primary-600 transition">Blog</Link>
-            <a href="#pricing" className="text-slate-600 hover:text-primary-600 transition">Pricing</a>
             <a href="#contact" className="bg-primary-600 text-white px-6 py-2.5 rounded-full hover:bg-primary-700 transition font-medium">Get Started</a>
           </div>
           
@@ -145,12 +145,12 @@ export default function Home() {
             <a href="#features" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
               Features
             </a>
+            <Link href="/plans" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+              Plans
+            </Link>
             <Link href="/blog" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
               Blog
             </Link>
-            <a href="#pricing" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
-              Pricing
-            </a>
             <a href="#contact" className="block py-2 mt-2 bg-primary-600 text-white text-center rounded-full py-2.5" onClick={() => setMobileMenuOpen(false)}>
               Get Started
             </a>
