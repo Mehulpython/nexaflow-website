@@ -120,6 +120,7 @@ export default function Home() {
             <a href="#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
             <a href="#features" className="text-slate-600 hover:text-primary-600 transition">Features</a>
             <Link href="/plans" className="text-slate-600 hover:text-primary-600 transition">Plans</Link>
+            <Link href="/onboarding" className="bg-gradient-to-r from-primary-600 to-accent-500 text-white px-5 py-2.5 rounded-full hover:opacity-90 transition font-medium">Start Free Trial</Link>
             <Link href="/blog" className="text-slate-600 hover:text-primary-600 transition">Blog</Link>
             <a href="#contact" className="bg-primary-600 text-white px-6 py-2.5 rounded-full hover:bg-primary-700 transition font-medium">Get Started</a>
           </div>
@@ -147,6 +148,9 @@ export default function Home() {
             </a>
             <Link href="/plans" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
               Plans
+            </Link>
+            <Link href="/onboarding" className="block py-2 text-primary-600 font-semibold" onClick={() => setMobileMenuOpen(false)}>
+              Start Free Trial →
             </Link>
             <Link href="/blog" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
               Blog

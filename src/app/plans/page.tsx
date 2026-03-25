@@ -1,6 +1,6 @@
 'use client'
 
-import { CheckCircle, X, Zap, ArrowRight, Phone, Mail, Shield, Clock, Users, MessageSquare, Brain, Calendar, BarChart3, ChevronDown, Menu } from 'lucide-react'
+import { CheckCircle, X, Zap, ArrowRight, Phone, Mail, Shield, Clock, Users, MessageSquare, Brain, Calendar, BarChart3, ChevronDown, Menu, Rocket } from 'lucide-react'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -258,8 +258,8 @@ export default function PlansPage() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contact-form"
+                <Link
+                  href="/onboarding"
                   className={`block text-center px-6 py-3 rounded-full font-semibold transition ${
                     plan.popular
                       ? 'bg-white text-primary-700 hover:bg-slate-100'
@@ -267,7 +267,18 @@ export default function PlansPage() {
                   }`}
                 >
                   {plan.cta}
-                </a>
+                </Link>
+                <Link
+                  href="/onboarding"
+                  className={`block text-center mt-3 px-6 py-3 rounded-full font-semibold transition border-2 flex items-center justify-center gap-2 ${
+                    plan.popular
+                      ? 'border-white/30 text-white hover:bg-white/10'
+                      : 'border-primary-200 text-primary-600 hover:bg-primary-50'
+                  }`}
+                >
+                  <Rocket className="w-4 h-4" />
+                  Start 14-Day Free Trial
+                </Link>
               </div>
             ))}
           </div>
