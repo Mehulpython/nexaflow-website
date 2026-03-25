@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     images: ['https://nexaflow360.com/logo.png'],
   },
   other: {
-    'google-site-verification': 'YOUR_VERIFICATION_CODE_HERE',
+    'google-site-verification': 'cQjepuM0cd_wh8urHHr5oM6ukuDg2Gl-pi-h8smArQw',
   },
 }
 
