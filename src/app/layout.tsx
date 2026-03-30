@@ -49,6 +49,9 @@ export const metadata: Metadata = {
   },
 }
 
+const POSTHOG_KEY = 'phc_R7NJhtbAH170gHQz3v8DxeJL96eLa9ufD71YJ4qcHNz'
+const POSTHOG_HOST = 'https://us.i.posthog.com'
+
 export default function RootLayout({
   children,
 }: {
@@ -70,6 +73,27 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-R6GMZ8J72M');
+            `,
+          }}
+        />
+        {/* PostHog Analytics - loads SDK then inits */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                var s=document.createElement('script');
+                s.src='${POSTHOG_HOST}/static/array.js';
+                s.crossOrigin='anonymous';
+                s.onload=function(){
+                  window.posthog.init('${POSTHOG_KEY}', {
+                    api_host: '${POSTHOG_HOST}',
+                    autocapture: true,
+                    capture_pageview: true,
+                    capture_pageleave: true
+                  });
+                };
+                document.head.appendChild(s);
+              })();
             `,
           }}
         />
