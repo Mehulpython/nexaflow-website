@@ -97,6 +97,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <Link href="/industries" className="text-slate-600 hover:text-primary-600 transition">Industries</Link>
             <Link href="/blog" className="text-primary-600 font-medium transition">Blog</Link>
             <a href="/#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
+            <a href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</a>
             <a href="/#pricing" className="text-slate-600 hover:text-primary-600 transition">Pricing</a>
             <a href="/#contact" className="bg-primary-600 text-white px-6 py-2.5 rounded-full hover:bg-primary-700 transition font-medium">Get Started</a>
           </div>

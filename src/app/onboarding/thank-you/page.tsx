@@ -13,6 +13,9 @@ export default function ThankYouPage() {
             </div>
             <span className="text-2xl font-bold gradient-text">NexaFlow AI</span>
           </Link>
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</Link>
+          </div>
           <Link href="/" className="text-primary-600 font-medium hover:text-primary-700 transition">
             ← Back to Home
           </Link>
