@@ -30,6 +30,7 @@ export default function IndustriesPage() {
           <div className="hidden md:flex items-center gap-8">
             <a href="/#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
             <a href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</a>
+            <a href="/services/connect" className="text-slate-600 hover:text-primary-600 transition">Connect</a>
             <Link href="/industries" className="text-primary-600 font-medium">Industries</Link>
             <a href="/#features" className="text-slate-600 hover:text-primary-600 transition">Features</a>
             <a href="/#pricing" className="text-slate-600 hover:text-primary-600 transition">Pricing</a>

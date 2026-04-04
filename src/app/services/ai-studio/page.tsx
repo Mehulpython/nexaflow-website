@@ -91,6 +91,7 @@ export default function AIStudioPage() {
             <Link href="/plans" className="text-slate-600 hover:text-primary-600 transition">Plans</Link>
             <Link href="/services/ai-call-center" className="text-slate-600 hover:text-primary-600 transition">AI Call Center</Link>
             <span className="text-primary-600 font-semibold">AI Studio</span>
+            <Link href="/services/connect" className="text-slate-600 hover:text-primary-600 transition">Connect</Link>
             <a href="#contact" className="bg-primary-600 text-white px-6 py-2.5 rounded-full hover:bg-primary-700 transition font-medium">Get Started</a>
           </div>
         </div>

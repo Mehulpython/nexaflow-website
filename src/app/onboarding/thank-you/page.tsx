@@ -15,6 +15,7 @@ export default function ThankYouPage() {
           </Link>
           <div className="hidden md:flex items-center gap-6">
             <Link href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</Link>
+            <Link href="/services/connect" className="text-slate-600 hover:text-primary-600 transition">Connect</Link>
           </div>
           <Link href="/" className="text-primary-600 font-medium hover:text-primary-700 transition">
             ← Back to Home

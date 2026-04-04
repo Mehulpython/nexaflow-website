@@ -224,6 +224,7 @@ export default function OnboardingPage() {
           <div className="hidden md:flex items-center gap-6">
             <a href="/#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
             <a href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</a>
+            <a href="/services/connect" className="text-slate-600 hover:text-primary-600 transition">Connect</a>
             <Link href="/plans" className="text-slate-600 hover:text-primary-600 transition">Plans</Link>
             <Link href="/blog" className="text-slate-600 hover:text-primary-600 transition">Blog</Link>
             <a href="/#contact" className="bg-primary-600 text-white px-6 py-2.5 rounded-full hover:bg-primary-700 transition font-medium">Contact</a>
@@ -236,6 +237,7 @@ export default function OnboardingPage() {
           <div className="md:hidden bg-white border-t border-slate-100 py-4 px-6">
             <a href="/#services" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="/services/ai-studio" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>AI Studio</a>
+            <a href="/services/connect" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>Connect</a>
             <Link href="/plans" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>Plans</Link>
             <Link href="/blog" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
             <a href="/#contact" className="block py-2 text-slate-600" onClick={() => setMobileMenuOpen(false)}>Contact</a>

@@ -159,6 +159,7 @@ export default function PlansPage() {
           <div className="hidden md:flex items-center gap-6">
             <a href="/#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
             <a href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</a>
+            <a href="/services/connect" className="text-slate-600 hover:text-primary-600 transition">Connect</a>
             <Link href="/plans" className="text-primary-600 font-medium transition">Plans</Link>
             <Link href="/industries" className="text-slate-600 hover:text-primary-600 transition">Industries</Link>
             <Link href="/blog" className="text-slate-600 hover:text-primary-600 transition">Blog</Link>
@@ -172,6 +173,7 @@ export default function PlansPage() {
           <div className="md:hidden bg-white border-t border-slate-100 py-4 px-6">
             <a href="/#services" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="/services/ai-studio" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>AI Studio</a>
+            <a href="/services/connect" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Connect</a>
             <Link href="/plans" className="block py-2 text-primary-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Plans</Link>
             <Link href="/industries" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
             <Link href="/blog" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Blog</Link>

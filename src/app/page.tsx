@@ -120,6 +120,7 @@ export default function Home() {
             <a href="#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
             <a href="/services/ai-call-center" className="text-slate-600 hover:text-primary-600 transition">AI Call Center</a>
             <a href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</a>
+            <a href="/services/connect" className="text-slate-600 hover:text-primary-600 transition">Connect</a>
             <a href="#features" className="text-slate-600 hover:text-primary-600 transition">Features</a>
             <Link href="/plans" className="text-slate-600 hover:text-primary-600 transition">Plans</Link>
             <Link href="/onboarding" className="bg-gradient-to-r from-primary-600 to-accent-500 text-white px-5 py-2.5 rounded-full hover:opacity-90 transition font-medium">Start Free Trial</Link>
@@ -150,6 +151,9 @@ export default function Home() {
             </a>
             <a href="/services/ai-studio" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
               AI Studio
+            </a>
+            <a href="/services/connect" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+              Connect
             </a>
             <a href="#features" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
               Features
