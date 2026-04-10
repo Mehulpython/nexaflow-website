@@ -1,6 +1,6 @@
 'use client'
 
-import { Zap, Globe, Brain, BarChart3, MessageSquare, Calendar, CheckCircle, Phone, Mail, ArrowRight, ChevronDown, Menu, X } from 'lucide-react'
+import { Zap, Globe, Brain, BarChart3, MessageSquare, Calendar, CheckCircle, Phone, Mail, ArrowRight, ChevronDown, Menu, X, Rocket } from 'lucide-react'
 import { useState } from 'react'
 import Link from 'next/link'
 import { industryCategories, industries } from '@/data/industries'
@@ -121,6 +121,7 @@ export default function Home() {
             <a href="/services/ai-call-center" className="text-slate-600 hover:text-primary-600 transition">AI Call Center</a>
             <a href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</a>
             <a href="/services/connect" className="text-slate-600 hover:text-primary-600 transition">Connect</a>
+            <a href="/services/ai-automation-agency" className="text-slate-600 hover:text-primary-600 transition">AI Agency</a>
             <a href="#features" className="text-slate-600 hover:text-primary-600 transition">Features</a>
             <Link href="/plans" className="text-slate-600 hover:text-primary-600 transition">Plans</Link>
             <Link href="/onboarding" className="bg-gradient-to-r from-primary-600 to-accent-500 text-white px-5 py-2.5 rounded-full hover:opacity-90 transition font-medium">Start Free Trial</Link>
@@ -154,6 +155,9 @@ export default function Home() {
             </a>
             <a href="/services/connect" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
               Connect
+            </a>
+            <a href="/services/ai-automation-agency" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+              AI Agency
             </a>
             <a href="#features" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
               Features
@@ -212,7 +216,7 @@ export default function Home() {
               <div className="text-slate-400 text-sm">AI Availability</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-white">4</div>
+              <div className="text-4xl font-bold text-white">5</div>
               <div className="text-slate-400 text-sm">Core Services</div>
             </div>
           </div>
@@ -227,7 +231,7 @@ export default function Home() {
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">Everything you need to modernize your business and save time</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service 1 */}
             <div className="bg-white rounded-3xl p-8 shadow-lg card-hover border border-slate-100">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
@@ -286,6 +290,21 @@ export default function Home() {
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Recommendations</li>
               </ul>
               <div className="mt-6 text-2xl font-bold text-primary-600">From $400</div>
+            </div>
+
+            {/* Service 5 */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg card-hover border border-slate-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl flex items-center justify-center mb-6">
+                <Rocket className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-3">AI Automation Agency</h3>
+              <p className="text-slate-600 mb-4">Get a dedicated AI team that builds custom agents, automates workflows, and delivers results — all for a flat monthly fee.</p>
+              <ul className="space-y-2 text-sm text-slate-600">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Custom AI agent development</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Workflow automation</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Content & data systems</li>
+              </ul>
+              <div className="mt-6 text-2xl font-bold text-primary-600">From $599</div>
             </div>
           </div>
         </div>

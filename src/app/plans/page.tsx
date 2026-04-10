@@ -58,20 +58,40 @@ const plans = [
     cta: 'Start Free Trial',
     popular: false,
   },
+  {
+    name: 'Agency',
+    price: 599,
+    description: 'Dedicated AI automation team — custom agents, workflows, content & data systems. Your $200/hr freelancer replacement.',
+    features: [
+      { text: 'Everything in Business plan', included: true },
+      { text: 'Custom AI agent development', included: true },
+      { text: 'Workflow automation (up to 5)', included: true },
+      { text: 'AI content system setup', included: true },
+      { text: 'Weekly strategy calls', included: true },
+      { text: 'Dedicated account manager', included: true },
+      { text: 'Setup fee waived ($499 value)', included: true },
+      { text: 'Priority build queue', included: true },
+    ],
+    cta: 'Get Started',
+    popular: false,
+    highlight: true,
+  },
 ]
 
 const comparisonFeatures = [
-  { feature: 'Monthly Price', starter: '$99', professional: '$199', business: '$349' },
-  { feature: 'Setup Fee', starter: '$299', professional: '$299', business: 'Waived' },
-  { feature: 'Channels', starter: '1 (Telegram)', professional: '2', business: '3+' },
-  { feature: 'AI Response Quality', starter: 'Basic', professional: 'Custom-trained', business: 'Multi-agent' },
-  { feature: 'Knowledge Base', starter: '—', professional: '✅ Custom', business: '✅ Advanced' },
-  { feature: 'Appointment Booking', starter: '—', professional: '✅', business: '✅' },
-  { feature: 'Automation Workflows', starter: 'Reminders only', professional: 'Standard', business: 'Advanced' },
-  { feature: 'Support', starter: 'Email', professional: 'Priority', business: 'Dedicated' },
-  { feature: 'Monthly Reporting', starter: '—', professional: '—', business: '✅' },
-  { feature: 'Custom Integrations', starter: '—', professional: '—', business: '✅' },
-  { feature: 'Free Trial', starter: '14 days', professional: '14 days', business: '14 days' },
+  { feature: 'Monthly Price', starter: '$99', professional: '$199', business: '$349', agency: '$599' },
+  { feature: 'Setup Fee', starter: '$299', professional: '$299', business: 'Waived', agency: 'Waived' },
+  { feature: 'Channels', starter: '1 (Telegram)', professional: '2', business: '3+', agency: '3+' },
+  { feature: 'AI Response Quality', starter: 'Basic', professional: 'Custom-trained', business: 'Multi-agent', agency: 'Multi-agent' },
+  { feature: 'Knowledge Base', starter: '—', professional: '✅ Custom', business: '✅ Advanced', agency: '✅ Advanced' },
+  { feature: 'Appointment Booking', starter: '—', professional: '✅', business: '✅', agency: '✅' },
+  { feature: 'Automation Workflows', starter: 'Reminders only', professional: 'Standard', business: 'Advanced', agency: 'Custom (up to 5)' },
+  { feature: 'AI Agent Development', starter: '—', professional: '—', business: '—', agency: '✅ Custom' },
+  { feature: 'Content Systems', starter: '—', professional: '—', business: '—', agency: '✅' },
+  { feature: 'Support', starter: 'Email', professional: 'Priority', business: 'Dedicated', agency: 'Account Manager' },
+  { feature: 'Monthly Reporting', starter: '—', professional: '—', business: '✅', agency: '✅ Weekly' },
+  { feature: 'Custom Integrations', starter: '—', professional: '—', business: '✅', agency: '✅ Priority' },
+  { feature: 'Free Trial', starter: '14 days', professional: '14 days', business: '14 days', agency: '14 days' },
 ]
 
 const faqs = [
@@ -106,6 +126,10 @@ const faqs = [
   {
     question: 'Do you offer custom solutions?',
     answer: 'Yes! The Business plan includes custom integrations and advanced automation. If you need something beyond our standard plans — custom AI workflows, additional channels, industry-specific features — reach out and we\'ll build it for you.',
+  },
+  {
+    question: 'What is the Agency plan?',
+    answer: 'The Agency plan is our all-in-one AI automation package. It includes everything from the Business plan plus custom AI agent development, workflow automation (up to 5), AI content system setup, weekly strategy calls, and a dedicated account manager. Think of it as having a full AI automation team for less than the cost of one $200/hr freelancer.',
   },
 ]
 
@@ -160,6 +184,7 @@ export default function PlansPage() {
             <a href="/#services" className="text-slate-600 hover:text-primary-600 transition">Services</a>
             <a href="/services/ai-studio" className="text-slate-600 hover:text-primary-600 transition">AI Studio</a>
             <a href="/services/connect" className="text-slate-600 hover:text-primary-600 transition">Connect</a>
+            <Link href="/services/ai-automation-agency" className="text-slate-600 hover:text-primary-600 transition">AI Agency</Link>
             <Link href="/plans" className="text-primary-600 font-medium transition">Plans</Link>
             <Link href="/industries" className="text-slate-600 hover:text-primary-600 transition">Industries</Link>
             <Link href="/blog" className="text-slate-600 hover:text-primary-600 transition">Blog</Link>
@@ -174,6 +199,7 @@ export default function PlansPage() {
             <a href="/#services" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="/services/ai-studio" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>AI Studio</a>
             <a href="/services/connect" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Connect</a>
+            <Link href="/services/ai-automation-agency" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>AI Agency</Link>
             <Link href="/plans" className="block py-2 text-primary-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Plans</Link>
             <Link href="/industries" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
             <Link href="/blog" className="block py-2 text-slate-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
@@ -232,11 +258,16 @@ export default function PlansPage() {
                 className={`rounded-3xl p-8 shadow-lg border ${
                   plan.popular
                     ? 'bg-gradient-to-b from-primary-600 to-primary-700 border-primary-500 transform scale-105 shadow-2xl'
+                    : (plan as any).highlight
+                    ? 'bg-gradient-to-b from-accent-50 to-white border-accent-300 border-2 shadow-xl'
                     : 'bg-white border-slate-200'
                 }`}
               >
                 {plan.popular && (
                   <div className="text-primary-200 text-sm font-semibold mb-2">MOST POPULAR</div>
+                )}
+                {(plan as any).highlight && !plan.popular && (
+                  <div className="text-accent-600 text-sm font-semibold mb-2">✦ AGENCY — BEST VALUE</div>
                 )}
                 <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-slate-800'}`}>
                   {plan.name}
@@ -312,6 +343,7 @@ export default function PlansPage() {
                   <th className="text-center py-4 px-6 font-semibold text-slate-800">Starter</th>
                   <th className="text-center py-4 px-6 font-semibold text-primary-600">Professional</th>
                   <th className="text-center py-4 px-6 font-semibold text-slate-800">Business</th>
+                  <th className="text-center py-4 px-6 font-semibold text-accent-600 bg-accent-50">Agency</th>
                 </tr>
               </thead>
               <tbody>
@@ -321,6 +353,7 @@ export default function PlansPage() {
                     <td className="py-3 px-6 text-center text-slate-600">{row.starter}</td>
                     <td className="py-3 px-6 text-center text-slate-700 font-medium">{row.professional}</td>
                     <td className="py-3 px-6 text-center text-slate-600">{row.business}</td>
+                    <td className="py-3 px-6 text-center text-accent-700 font-semibold bg-accent-50/50">{row.agency}</td>
                   </tr>
                 ))}
               </tbody>
