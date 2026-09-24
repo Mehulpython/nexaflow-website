@@ -46,6 +46,8 @@ export const metadata: Metadata = {
   },
   other: {
     'google-site-verification': 'cQjepuM0cd_wh8urHHr5oM6ukuDg2Gl-pi-h8smArQw',
+    // invisible pipeline marker — verifies Git auto-deploys end-to-end
+    'deploy-test': 'git-pipeline-2026-09-24',
   },
 }
 
