@@ -263,7 +263,7 @@ export default function AIAutomationAgencyPage() {
             <Link href="/services/connect" className="hover:text-white transition">Connect</Link>
             <Link href="/services/ai-automation-agency" className="hover:text-white transition">AI Automation Agency</Link>
             <a href="mailto:info@nexaflow360.com" className="hover:text-white transition">info@nexaflow360.com</a>
-            <a href="tel:+132****1129" className="hover:text-white transition">(323) 917-1129</a>
+            <a href="tel:+13239171129" className="hover:text-white transition">(323) 917-1129</a>
           </div>
           <p className="text-sm">&copy; 2026 NexaFlow AI. All rights reserved.</p>
         </div>

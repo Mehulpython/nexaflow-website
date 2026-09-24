@@ -105,7 +105,7 @@ export default function NexaFlowConnectPage() {
             Deploy AI voice agents with Gemini intelligence, real-time monitoring, and a 16-page dashboard. Complete call center SaaS starting at $300/mo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://connect.nexaflow360.com" target="_blank" rel="noopener noreferrer" className="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition text-lg">
+            <a href="/services/connect" target="_blank" rel="noopener noreferrer" className="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition text-lg">
               Launch Connect <ArrowRight className="w-5 h-5 inline ml-1" />
             </a>
             <a href="#how-it-works" className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition text-lg">
@@ -293,7 +293,7 @@ export default function NexaFlowConnectPage() {
             </div>
           </div>
           <div className="text-center mt-8">
-            <a href="https://connect.nexaflow360.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-700 transition text-lg">
+            <a href="/services/connect" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-700 transition text-lg">
               Launch Connect Dashboard <ArrowRight className="w-5 h-5" />
             </a>
           </div>
@@ -343,7 +343,7 @@ export default function NexaFlowConnectPage() {
           <p className="text-slate-300 mb-8">Start your 14-day free trial. No credit card needed.</p>
 
           <div className="mb-8">
-            <a href="https://connect.nexaflow360.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition text-lg">
+            <a href="/services/connect" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition text-lg">
               Launch Connect <ArrowRight className="w-5 h-5" />
             </a>
           </div>
@@ -384,9 +384,9 @@ export default function NexaFlowConnectPage() {
             <Link href="/plans" className="hover:text-white transition">Plans</Link>
             <Link href="/services/ai-call-center" className="hover:text-white transition">AI Call Center</Link>
             <Link href="/services/ai-studio" className="hover:text-white transition">AI Studio</Link>
-            <a href="https://connect.nexaflow360.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Connect</a>
+            <a href="/services/connect" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Connect</a>
             <a href="mailto:info@nexaflow360.com" className="hover:text-white transition">info@nexaflow360.com</a>
-            <a href="tel:+132****1129" className="hover:text-white transition">(323) 917-1129</a>
+            <a href="tel:+13239171129" className="hover:text-white transition">(323) 917-1129</a>
           </div>
           <p className="text-sm">&copy; 2026 NexaFlow AI. All rights reserved.</p>
         </div>

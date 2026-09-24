@@ -4,6 +4,13 @@ import TawkChat from '@/components/TawkChat'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo-square.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/logo-square.png',
+  },
   title: 'NexaFlow AI | AI-Powered Solutions for Small Businesses',
   description: 'Transform your business with AI-powered tools: Excel automation, data analysis, OpenClaw AI assistants, and modern websites. Affordable solutions starting at $300.',
   keywords: 'AI for small business, AI automation, business automation, AI assistant setup, website development, Excel automation, data analysis, small business solutions, NexaFlow AI',
@@ -100,7 +107,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body className={inter.variable}>
         {children}
         <TawkChat />
       </body>
