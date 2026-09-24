@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 import TawkChat from '@/components/TawkChat'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
   icons: {
