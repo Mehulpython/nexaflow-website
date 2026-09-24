@@ -237,7 +237,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
                 <Brain className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-3">OpenClaw AI Assistant</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-3">AI Agent Assistance</h3>
               <p className="text-slate-600 mb-4">Your personal AI assistant that handles messaging, tasks, calendars, and workflows 24/7.</p>
               <ul className="space-y-2 text-sm text-slate-600">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> Multi-channel messaging</li>
@@ -541,7 +541,7 @@ export default function Home() {
                   className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/50"
                 >
                   <option value="" className="text-slate-800">Select Service</option>
-                  <option value="openclaw" className="text-slate-800">OpenClaw AI Assistant</option>
+                  <option value="openclaw" className="text-slate-800">AI Agent Assistance</option>
                   <option value="website" className="text-slate-800">Website Development</option>
                   <option value="excel" className="text-slate-800">Excel Automation</option>
                   <option value="data" className="text-slate-800">Data Analysis</option>
